@@ -9,17 +9,28 @@ namespace CMP1903_A1_2324
 {
     internal class Testing
     {
-        Game GameTest = new Game();
         Die DiceTest = new Die();
-        int TestDice1 = 0;
-        int TestDice2 = 0;
-        int TestDice3 = 0;
-        public void Test()
+        Game GameTest = new Game();
+        int TestDice = 0;
+        int TestGame = 0;
+        public bool Test()
         {
-            TestDice1 = DiceTest.Roll();
-            TestDice2 = DiceTest.Roll();
-            TestDice3 = DiceTest.Roll();
-
+            TestDice = DiceTest.Roll();
+            TestGame = GameTest.RollDice();
+            if (TestDice != 0)
+            {
+                Debug.Assert((1 <= TestDice) && (6 >= TestDice));
+                return true;
+            }
+            else if (TestGame != 0)
+            {
+                Debug.Assert((1 <= TestGame) && (18 >= TestGame));
+                    return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         /*
          * This class should test the Game and the Die class.

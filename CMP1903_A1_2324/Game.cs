@@ -22,16 +22,18 @@ namespace CMP1903_A1_2324
             int diceA = dice1.Roll();
             int diceB = dice2.Roll();
             int diceC = dice3.Roll();
-            DiceTotal = DiceTotal + diceA + diceB + diceC;
             int DiceSum = diceA + diceB + diceC;
+            DiceTotal = DiceTotal + diceA + diceB + diceC;
             Console.WriteLine("The first dice rolled a " + diceA);
             Console.WriteLine("the secind dice rolled a " + diceB);
             Console.WriteLine("The third dice rolled a " + diceC);
+            Console.WriteLine(" ");
             Console.WriteLine("The sum of the three dice is " + DiceSum);
             Console.WriteLine("The total of every dice rolled is " + DiceTotal);
             string EndGame = ("Game ended, press any key to close the window");
             string RollAgain = ("Re-rolling dice...");
             string Error = ("Only 're-roll' and 'end' are accepted inputs");
+            Console.WriteLine(" ");
             Console.WriteLine(" ");
             Console.WriteLine("To re-roll the dice type 're-roll'");
             Console.WriteLine("To close the game type 'end'");
@@ -42,17 +44,20 @@ namespace CMP1903_A1_2324
                 string UserInput = Console.ReadLine();
                 if (UserInput == "re-roll")
                 {
+                    Console.WriteLine(" ");
                     Console.WriteLine(RollAgain);
                     Console.WriteLine(" ");
                     RollDice();
                 }
                 else if (UserInput == "end")
                 {
+                    Console.WriteLine(" ");
                     Console.WriteLine(EndGame);
                     break;
                 }
                 else
                 {
+                    Console.WriteLine(" ");
                     Console.WriteLine(Error);
                 }
             }

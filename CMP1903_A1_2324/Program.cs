@@ -14,6 +14,7 @@ namespace CMP1903_A1_2324
             Testing TestGame = new Testing();
 
             int RunGame = PlayGame.RollDice();
+            bool TestingGame = TestGame.Test();
 
             Console.ReadKey();
             /*
