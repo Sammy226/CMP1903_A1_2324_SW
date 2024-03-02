@@ -10,34 +10,16 @@ namespace CMP1903_A1_2324
 {
     internal class Die
     {
-        public int DiceNum = 0;
-        public int DiceNumber
-        {
-            get {return DiceNum;}
-            set {DiceNum = value;}
-        }
+        public int DiceNum;
 
-        public int Roll1()
+        static Random rolling = new Random();
+        
+        
+        public int Roll()
         {
-            Random rolling1 = new Random((int)DateTime.Now.Ticks);
-            int diceroll = rolling1.Next(1,7);
-            int updatedice = DiceNum + diceroll;
-            return updatedice;
-        }
-        public int Roll2()
-        {
-            Random rolling2 = new Random((int)DateTime.Now.Ticks);
-            int diceroll = rolling2.Next(1, 7);
-            int updatedice = DiceNum + diceroll;
-            return updatedice;
-        }
-
-        public int Roll3()
-        {
-            Random rolling3 = new Random((int)DateTime.Now.Ticks);
-            int diceroll = rolling3.Next(1, 7);
-            int updatedice = DiceNum + diceroll;
-            return updatedice;
+            DiceNum = 0;
+            DiceNum = rolling.Next(1,7);
+            return DiceNum;
         }
         /*
          * The Die class should contain one property to hold the current die value,

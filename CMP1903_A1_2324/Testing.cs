@@ -16,11 +16,10 @@ namespace CMP1903_A1_2324
         int TestDice3 = 0;
         public void Test()
         {
-            TestDice1 = DiceTest.Roll1();
-            TestDice2 = DiceTest.Roll2();
-            TestDice3 = DiceTest.Roll3();
-            Debug.Assert();
-            Debug.Assert();
+            TestDice1 = DiceTest.Roll();
+            TestDice2 = DiceTest.Roll();
+            TestDice3 = DiceTest.Roll();
+
         }
         /*
          * This class should test the Game and the Die class.

@@ -18,20 +18,18 @@ namespace CMP1903_A1_2324
 
         public int RollDice()
         {
-            dice1.DiceNum = dice1.Roll1();
-            int diceA = dice1.DiceNum;
-            dice2.DiceNum = dice2.Roll2();
-            int diceB = dice2.DiceNum;
-            dice3.DiceNum = dice3.Roll3();
-            int diceC = dice3.DiceNum;
+            
+            int diceA = dice1.Roll();
+            int diceB = dice2.Roll();
+            int diceC = dice3.Roll();
             DiceTotal = DiceTotal + diceA + diceB + diceC;
             int DiceSum = diceA + diceB + diceC;
             Console.WriteLine("The first dice rolled a " + diceA);
             Console.WriteLine("the secind dice rolled a " + diceB);
             Console.WriteLine("The third dice rolled a " + diceC);
             Console.WriteLine("The sum of the three dice is " + DiceSum);
-            Console.WriteLine("The total of every dice roll is " + DiceTotal);
-            string EndGame = ("Game ended, enter anything to close the window");
+            Console.WriteLine("The total of every dice rolled is " + DiceTotal);
+            string EndGame = ("Game ended, press any key to close the window");
             string RollAgain = ("Re-rolling dice...");
             string Error = ("Only 're-roll' and 'end' are accepted inputs");
             Console.WriteLine(" ");
