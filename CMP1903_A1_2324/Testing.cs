@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,13 +9,21 @@ namespace CMP1903_A1_2324
 {
     internal class Testing
     {
-        /*
-         * This class should test the Game and the Die class.
-         * Create a Game object, call the methods and compare their output to expected output.
-         * Create a Die object and call its method.
-         * Use debug.assert() to make the comparisons and tests.
-         */
+        Die DiceTest = new Die();
+        Game GameTest = new Game();
 
-        //Method
+        public void Test()
+        {
+            if (DiceTest.Roll() != 0)
+            {
+                Debug.Assert((1 <= DiceTest.Roll()) && (6 >= DiceTest.Roll())); // this prevents the dice from rolling higher then a 6 or lower then 1
+                Console.WriteLine("Dice value exceeds the range");
+            }
+            else if (GameTest.RollDice() != 0)
+            {
+                Debug.Assert((3 <= GameTest.RollDice()) && (18 >= GameTest.RollDice())); // this prevents the total dice rolls from going higher then the max (18) and lower then the min (3)
+                Console.WriteLine("Total dice value exceeds the range");
+            }
+        }
     }
 }
