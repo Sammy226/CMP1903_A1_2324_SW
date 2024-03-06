@@ -14,15 +14,17 @@ namespace CMP1903_A1_2324
         public Die dice2 = new Die();
         public Die dice3 = new Die();
 
-        int DiceTotal = 0;
+        //this creates three dice objects
+
+        int DiceTotal = 0; //"DiceTotal" is a variable that will store the dices totals but not reset if the user re-rolls.
 
         public int RollDice()
         {
             
-            int diceA = dice1.Roll();
+            int diceA = dice1.Roll();// this generates a random number between 1 - 6 and stores it in diceA, diceB and diceC
             int diceB = dice2.Roll();
             int diceC = dice3.Roll();
-            int DiceSum = diceA + diceB + diceC;
+            int DiceSum = diceA + diceB + diceC; // this will store the three dices total
             DiceTotal = DiceTotal + diceA + diceB + diceC;
             Console.WriteLine("The first dice rolled a " + diceA);
             Console.WriteLine("the secind dice rolled a " + diceB);
@@ -30,48 +32,12 @@ namespace CMP1903_A1_2324
             Console.WriteLine(" ");
             Console.WriteLine("The sum of the three dice is " + DiceSum);
             Console.WriteLine("The total of every dice rolled is " + DiceTotal);
-            string EndGame = ("Game ended, press any key to close the window");
-            string RollAgain = ("Re-rolling dice...");
-            string Error = ("Only 're-roll' and 'end' are accepted inputs");
             Console.WriteLine(" ");
             Console.WriteLine(" ");
             Console.WriteLine("To re-roll the dice type 're-roll'");
             Console.WriteLine("To close the game type 'end'");
             Console.WriteLine("Any other user input will not be accepted");
-            bool loop = true;
-            while (loop == true)
-            {
-                string UserInput = Console.ReadLine();
-                if (UserInput == "re-roll")
-                {
-                    Console.WriteLine(" ");
-                    Console.WriteLine(RollAgain);
-                    Console.WriteLine(" ");
-                    RollDice();
-                }
-                else if (UserInput == "end")
-                {
-                    Console.WriteLine(" ");
-                    Console.WriteLine(EndGame);
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine(" ");
-                    Console.WriteLine(Error);
-                }
-            }
             return DiceSum;
         }
-            
-        /*
-         * The Game class should create three die objects, roll them, sum and report the total of the three dice rolls.
-         *
-         * EXTRA: For extra requirements (these aren't required though), the dice rolls could be managed so that the
-         * rolls could be continous, and the totals and other statistics could be summarised for example.
-         */
-
-        //Methods
-
     }
 }
