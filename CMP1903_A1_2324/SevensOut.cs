@@ -14,7 +14,7 @@ namespace CMP1903_A1_2324
         int TotalScore1 = 0;
         int TotalScore2 = 0;
 
-        public int PlaySevensPvP()
+        public void PlaySevens()
         {
             bool SevensLoop1 = true;
             while (SevensLoop1 == true)
@@ -25,8 +25,8 @@ namespace CMP1903_A1_2324
                 int diceB = dice2.Roll();
                 if (diceA == diceB)
                 {
-                    int DiceScore = diceA + diceB * 2;
-                       TotalScore1 = TotalScore1 + DiceScore;
+                    int DiceScore = (diceA + diceB) * 2;
+                    TotalScore1 = TotalScore1 + DiceScore;
                 }
                 else if (diceA + diceB == 7)
                 {
@@ -54,7 +54,7 @@ namespace CMP1903_A1_2324
                 int diceB = dice2.Roll();
                 if (diceA == diceB)
                 {
-                    int DiceScore = diceA + diceB * 2;
+                    int DiceScore = (diceA + diceB) * 2;
                     TotalScore2 = TotalScore2 + DiceScore;
                 }
                 else if (diceA + diceB == 7)
@@ -86,6 +86,7 @@ namespace CMP1903_A1_2324
                 Console.WriteLine("GAME OVER");
                 Console.WriteLine("Draw");
             }
+
         }
 
     }
