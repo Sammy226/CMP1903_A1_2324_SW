@@ -10,34 +10,28 @@ namespace CMP1903_A1_2324
 {
     internal class Game
     {
-        public Die dice1 = new Die();
-        public Die dice2 = new Die();
-        public Die dice3 = new Die();
-
-        //this creates three dice objects
-
-        int DiceTotal = 0; //"DiceTotal" is a variable that will store the dices totals but not reset if the user re-rolls.
-
-        public int RollDice()
+        SevensOut Sevens = new SevensOut();
+        ThreeOrMore Three = new ThreeOrMore();
+        public void SelectGame()
         {
-            
-            int diceA = dice1.Roll();// this generates a random number between 1 - 6 and stores it in diceA, diceB and diceC
-            int diceB = dice2.Roll();
-            int diceC = dice3.Roll();
-            int DiceSum = diceA + diceB + diceC; // this will store the three dices total
-            DiceTotal = DiceTotal + diceA + diceB + diceC;
-            Console.WriteLine("The first dice rolled a " + diceA);
-            Console.WriteLine("the secind dice rolled a " + diceB);
-            Console.WriteLine("The third dice rolled a " + diceC);
+            Console.WriteLine("Which game would you like to play");
+            Console.WriteLine("Enter 1 to play Sevens Out");
+            Console.WriteLine("Enter 2 to play Three Or More");
             Console.WriteLine(" ");
-            Console.WriteLine("The sum of the three dice is " + DiceSum);
-            Console.WriteLine("The total of every dice rolled is " + DiceTotal);
-            Console.WriteLine(" ");
-            Console.WriteLine(" ");
-            Console.WriteLine("To re-roll the dice type 're-roll'");
-            Console.WriteLine("To close the game type 'end'");
-            Console.WriteLine("Any other user input will not be accepted");
-            return DiceSum;
+            string GameChoice = Console.ReadLine();
+            if (GameChoice == "1")
+            {
+                Sevens.PlaySevens();
+            }
+            else if (GameChoice == "2")
+            {
+                Three.PlayThreeOrMore();
+            }
+            else
+            {
+                Console.WriteLine("Only '1' and '2' are accepted inputs");
+            }
+
         }
     }
 }
