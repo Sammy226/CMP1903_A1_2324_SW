@@ -30,6 +30,7 @@ namespace CMP1903_A1_2324
             else
             {
                 Console.WriteLine("Only '1' and '2' are accepted inputs");
+                Console.ReadKey();
             }
 
         }

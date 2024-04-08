@@ -225,6 +225,7 @@ namespace CMP1903_A1_2324
             {
                 Console.WriteLine("Player 2 scored 0 points this turn");
             }
+
         }
     }
 }
