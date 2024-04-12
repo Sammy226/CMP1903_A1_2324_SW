@@ -32,7 +32,6 @@ namespace CMP1903_A1_2324
                     DiceScore = (diceA + diceB) * 2;
                     DiceTotal = diceA + diceB;
                     TotalScore1 = TotalScore1 + DiceScore;
-
                 }
                 else if (diceA + diceB == 7)
                 {
@@ -47,7 +46,7 @@ namespace CMP1903_A1_2324
                 Console.WriteLine(" ");
                 Console.WriteLine("Dice 1 rolled: " + diceA);
                 Console.WriteLine("Dice 2 rolled: " + diceB);
-                Console.WriteLine("The Dice Total is:" + DiceTotal);
+                Console.WriteLine("The Dice Total is: " + DiceTotal);
                 Console.WriteLine("Player 1s score is: " + TotalScore1);
                 Console.WriteLine(" ");
                 diceA = 0;
