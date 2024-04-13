@@ -20,11 +20,15 @@ namespace CMP1903_A1_2324
         
         public void PlayThreeOrMore()
         {
+            List<int> RollingDice = new List<int>();
+            List<int> DupList = new List<int>();
+            List<int> DupCountList = new List<int>();
             Console.WriteLine("Game Started");
 
             bool GameLoop = true;
             while (GameLoop == true)
             {
+                Console.WriteLine(" ");
                 Console.WriteLine("Player 1s turn");
                 Console.WriteLine("Press anything to roll");
                 Console.WriteLine(" ");
@@ -46,7 +50,7 @@ namespace CMP1903_A1_2324
                 Console.WriteLine("If you have selected all the dice you wish to reroll type 'done'");
                 Console.WriteLine(" ");
                 bool ChoiceLoop = true;
-                List<int> RollingDice = new List<int>();
+                RollingDice.Clear();
                 while (ChoiceLoop == true)
                 {
 
@@ -97,35 +101,38 @@ namespace CMP1903_A1_2324
                 Console.WriteLine("Dice 4: " + diceD);
                 Console.WriteLine("Dice 5: " + diceE);
                 Console.WriteLine(" ");
-                int DupCount = 0;
-                if (diceA == diceB | diceA == diceC | diceA == diceD | diceA == diceE)
-                {
-                    DupCount = DupCount + 1;
-                }
-                if (diceB == diceC | diceB == diceD | diceB == diceE)
-                {
-                    DupCount = DupCount + 1;
-                }
-                if (diceC == diceD | diceC == diceE)
-                {
-                    DupCount = DupCount + 1;
-                }
-                if (diceD == diceE)
-                {
-                    DupCount = DupCount + 1;
-                }
+                DupList.Clear();
+                DupList.Add(diceA);
+                DupList.Add(diceB);
+                DupList.Add(diceC);
+                DupList.Add(diceD);
+                DupList.Add(diceE);
+                int DupCount1 = DupList.Count(x => x == 1);
+                int DupCount2 = DupList.Count(x => x == 2);
+                int DupCount3 = DupList.Count(x => x == 3);
+                int DupCount4 = DupList.Count(x => x == 4);
+                int DupCount5 = DupList.Count(x => x == 5);
+                int DupCount6 = DupList.Count(x => x == 6);
+                DupCountList.Clear();
+                DupCountList.Add(DupCount1);
+                DupCountList.Add(DupCount2);
+                DupCountList.Add(DupCount3);
+                DupCountList.Add(DupCount4);
+                DupCountList.Add(DupCount5);
+                DupCountList.Add(DupCount6);
+                int DupCount = DupCountList.Max();
 
-                if (DupCount == 2)
+                if (DupCount == 3)
                 {
                     Player1Score = Player1Score + 3;
                     Console.WriteLine("Player 1 scored 3 points this turn");
                 }
-                else if (DupCount == 3)
+                else if (DupCount == 4)
                 {
                     Player1Score = Player1Score + 6;
                     Console.WriteLine("Player 1 scored 6 points this turn");
                 }
-                else if (DupCount == 4)
+                else if (DupCount == 5)
                 {
                     Player1Score = Player1Score + 12;
                     Console.WriteLine("Player 1 scored 12 points this turn");
@@ -136,10 +143,12 @@ namespace CMP1903_A1_2324
                 }
 
 
+                //Player 2s turn
 
                 Console.WriteLine("");
                 Console.WriteLine("Player 2s turn");
                 Console.WriteLine("Press anything to roll");
+                Console.WriteLine(" ");
                 Console.ReadKey();
                 diceA = dice1.Roll();
                 diceB = dice2.Roll();
@@ -172,7 +181,7 @@ namespace CMP1903_A1_2324
                     {
                         int NewDiceChoice = int.Parse(DiceChoice);
                         RollingDice.Add(NewDiceChoice);
-                        Console.WriteLine("Anything Else");
+                        Console.WriteLine("Anything else?");
                     }
                     else
                     {
@@ -208,35 +217,38 @@ namespace CMP1903_A1_2324
                 Console.WriteLine("Dice 4: " + diceD);
                 Console.WriteLine("Dice 5: " + diceE);
                 Console.WriteLine(" ");
-                DupCount = 0;
-                if (diceA == diceB | diceA == diceC | diceA == diceD | diceA == diceE)
-                {
-                    DupCount = DupCount + 1;
-                }
-                if (diceB == diceC | diceB == diceD | diceB == diceE)
-                {
-                    DupCount = DupCount + 1;
-                }
-                if (diceC == diceD | diceC == diceE)
-                {
-                    DupCount = DupCount + 1;
-                }
-                if (diceD == diceE)
-                {
-                    DupCount = DupCount + 1;
-                }
+                DupList.Clear();
+                DupList.Add(diceA);
+                DupList.Add(diceB);
+                DupList.Add(diceC);
+                DupList.Add(diceD);
+                DupList.Add(diceE);
+                DupCount1 = DupList.Count(x => x == 1);
+                DupCount2 = DupList.Count(x => x == 2);
+                DupCount3 = DupList.Count(x => x == 3);
+                DupCount4 = DupList.Count(x => x == 4);
+                DupCount5 = DupList.Count(x => x == 5);
+                DupCount6 = DupList.Count(x => x == 6);
+                DupCountList.Clear();
+                DupCountList.Add(DupCount1);
+                DupCountList.Add(DupCount2);
+                DupCountList.Add(DupCount3);
+                DupCountList.Add(DupCount4);
+                DupCountList.Add(DupCount5);
+                DupCountList.Add(DupCount6);
+                DupCount = DupCountList.Max();
 
-                if (DupCount == 2)
+                if (DupCount == 3)
                 {
                     Player2Score = Player2Score + 3;
                     Console.WriteLine("Player 2 scored 3 points this turn");
                 }
-                else if (DupCount == 3)
+                else if (DupCount == 4)
                 {
                     Player2Score = Player2Score + 6;
                     Console.WriteLine("Player 2 scored 6 points this turn");
                 }
-                else if (DupCount == 4)
+                else if (DupCount == 5)
                 {
                     Player2Score = Player2Score + 12;
                     Console.WriteLine("Player 2 scored 12 points this turn");
@@ -245,6 +257,11 @@ namespace CMP1903_A1_2324
                 {
                     Console.WriteLine("Player 2 scored 0 points this turn");
                 }
+
+                Console.WriteLine(" ");
+                Console.WriteLine("Player 1s score: " + Player1Score);
+                Console.WriteLine("Player 2s Score: " + Player2Score);
+                Console.WriteLine(" ");
 
                 if (Player1Score >= 20 | Player2Score >= 20)
                 {
