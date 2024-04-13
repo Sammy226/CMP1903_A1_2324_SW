@@ -18,19 +18,24 @@ namespace CMP1903_A1_2324
             Console.WriteLine("Enter 1 to play Sevens Out");
             Console.WriteLine("Enter 2 to play Three Or More");
             Console.WriteLine(" ");
-            string GameChoice = Console.ReadLine();
-            if (GameChoice == "1")
+            bool GameStartLoop = true;
+            while (GameStartLoop == true)
             {
-                Sevens.PlaySevens();
-            }
-            else if (GameChoice == "2")
-            {
-                Three.PlayThreeOrMore();
-            }
-            else
-            {
-                Console.WriteLine("Only '1' and '2' are accepted inputs");
-                Console.ReadKey();
+                string GameChoice = Console.ReadLine();
+                if (GameChoice == "1")
+                {
+                    Sevens.PlaySevens();
+                    GameStartLoop = false;
+                }
+                else if (GameChoice == "2")
+                {
+                    Three.PlayThreeOrMore();
+                    GameStartLoop = false;
+                }
+                else
+                {
+                    Console.WriteLine("Only '1' and '2' are accepted inputs");
+                }
             }
 
         }

@@ -269,18 +269,24 @@ namespace CMP1903_A1_2324
                     {
                         Console.WriteLine("Game Over");
                         Console.WriteLine("Player 1 Wins!!!");
+                        Console.WriteLine("Press anything to close game");
+                        Console.ReadKey();
                         GameLoop = false;
                     }
                     else if (Player1Score < Player2Score)
                     {
                         Console.WriteLine("Game Over");
                         Console.WriteLine("Player 2 Wins!!!");
+                        Console.WriteLine("Press anything to close game");
+                        Console.ReadKey();
                         GameLoop = false;
                     }
                     else if (Player1Score == Player2Score)
                     {
                         Console.WriteLine("Game Over");
                         Console.WriteLine("Draw!!!");
+                        Console.WriteLine("Press anything to close game");
+                        Console.ReadKey();
                         GameLoop = false;
                     }
                     else
@@ -290,5 +296,6 @@ namespace CMP1903_A1_2324
                 }
             }
         }
+
     }
 }
