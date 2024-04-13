@@ -12,6 +12,16 @@ namespace CMP1903_A1_2324
         {
             Game Start = new Game();
 
+            List<int> ints = new List<int>();
+            ints.Add(1);
+            ints.Add(2);
+            ints.Add(3);
+            ints.Add(3);
+            ints.Add(3);
+            ints.Add(6);
+            List<int> list2 = ints.Distinct().ToList();
+            list2.ForEach(Console.WriteLine);
+
             Start.SelectGame();
         }
     }

@@ -306,6 +306,7 @@ namespace CMP1903_A1_2324
             List<int> RollingDice = new List<int>();
             List<int> DupList = new List<int>();
             List<int> DupCountList = new List<int>();
+            List<int> ComputerChoice = new List<int>();
             Console.WriteLine("Game Started");
 
             bool GameLoop = true;
@@ -425,7 +426,6 @@ namespace CMP1903_A1_2324
                     Console.WriteLine("Player 1 scored 0 points this turn");
                 }
 
-
                 //Computers turn
 
                 Console.WriteLine("");
@@ -444,47 +444,34 @@ namespace CMP1903_A1_2324
                 Console.WriteLine("Dice 4: " + diceD);
                 Console.WriteLine("Dice 5: " + diceE);
                 Console.WriteLine(" ");
-                bool ChoiceLoop2 = true;
-                RollingDice.Clear();
-                while (ChoiceLoop2 == true)
-                {
+                Console.WriteLine("Re-rolling dice");
+                Console.WriteLine(" ");
+ 
+                ComputerChoice.Clear();
+                ComputerChoice.Add(diceA);
+                ComputerChoice.Add(diceB);
+                ComputerChoice.Add(diceC);
+                ComputerChoice.Add(diceD);
+                ComputerChoice.Add(diceE);
+                List <int> ComputerChoice2 = ComputerChoice.Distinct().ToList();
 
-                    string DiceChoice = Console.ReadLine();
-                    if (DiceChoice == "done")
-                    {
-                        ChoiceLoop2 = false;
-                        Console.WriteLine(" ");
-                    }
-                    else if (DiceChoice == "1" | DiceChoice == "2" | DiceChoice == "3" | DiceChoice == "4" | DiceChoice == "5")
-                    {
-                        int NewDiceChoice = int.Parse(DiceChoice);
-                        RollingDice.Add(NewDiceChoice);
-                        Console.WriteLine("Anything else?");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Valid inputs include: '1', '2', '3', '4', '5', 'done'");
-                        Console.WriteLine("Please try again");
-                        Console.WriteLine(" ");
-                    }
-                }
-                if (RollingDice.Contains(1))
+                if (ComputerChoice.Contains(diceA))
                 {
                     diceA = dice1.Roll();
                 }
-                if (RollingDice.Contains(2))
+                if (ComputerChoice.Contains(diceB))
                 {
                     diceB = dice2.Roll();
                 }
-                if (RollingDice.Contains(3))
+                if (ComputerChoice.Contains(diceC))
                 {
                     diceC = dice3.Roll();
                 }
-                if (RollingDice.Contains(4))
+                if (ComputerChoice.Contains(diceD))
                 {
                     diceD = dice4.Roll();
                 }
-                if (RollingDice.Contains(5))
+                if (ComputerChoice.Contains(diceE))
                 {
                     diceE = dice5.Roll();
                 }
@@ -519,21 +506,21 @@ namespace CMP1903_A1_2324
                 if (DupCount == 3)
                 {
                     Player2Score = Player2Score + 3;
-                    Console.WriteLine("Player 2 scored 3 points this turn");
+                    Console.WriteLine("Computer scored 3 points this turn");
                 }
                 else if (DupCount == 4)
                 {
                     Player2Score = Player2Score + 6;
-                    Console.WriteLine("Player 2 scored 6 points this turn");
+                    Console.WriteLine("Computer scored 6 points this turn");
                 }
                 else if (DupCount == 5)
                 {
                     Player2Score = Player2Score + 12;
-                    Console.WriteLine("Player 2 scored 12 points this turn");
+                    Console.WriteLine("Computer scored 12 points this turn");
                 }
                 else
                 {
-                    Console.WriteLine("Player 2 scored 0 points this turn");
+                    Console.WriteLine("Computer scored 0 points this turn");
                 }
 
                 Console.WriteLine(" ");

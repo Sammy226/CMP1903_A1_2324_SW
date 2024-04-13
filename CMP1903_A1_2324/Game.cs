@@ -29,8 +29,30 @@ namespace CMP1903_A1_2324
                 }
                 else if (GameChoice == "2")
                 {
-                    Three.PlayThreeOrMore();
                     GameStartLoop = false;
+                    Console.WriteLine("Do you want to play Three Or More against another player or a computer");
+                    Console.WriteLine("Press 1 to play VS a player, press 2 to play VS the computer");
+                    bool VSoptions = true;
+                    while (VSoptions == true)
+                    {
+                        string VSchoice = Console.ReadLine();
+                        if (VSchoice == "1")
+                        {
+                            VSoptions = false;
+                            Three.PlayThreeOrMore();
+                        }
+                        else if (VSchoice == "2")
+                        {
+                            VSoptions = false;
+                            Three.PlayThreeOrMorePVC();
+                        }
+                        else
+                        {
+                            Console.WriteLine(" ");
+                            Console.WriteLine("Only '1' and '2' are accepted inputs");
+                            Console.WriteLine(" ");
+                        }
+                    }
                 }
                 else
                 {
