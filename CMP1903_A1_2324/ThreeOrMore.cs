@@ -49,8 +49,10 @@ namespace CMP1903_A1_2324
                 Console.WriteLine("You will get to select more dice after if you want");
                 Console.WriteLine("If you have selected all the dice you wish to reroll type 'done'");
                 Console.WriteLine(" ");
+
                 bool ChoiceLoop = true;
                 RollingDice.Clear();
+
                 while (ChoiceLoop == true)
                 {
 
@@ -145,6 +147,7 @@ namespace CMP1903_A1_2324
 
                 //Player 2s turn
 
+
                 Console.WriteLine("");
                 Console.WriteLine("Player 2s turn");
                 Console.WriteLine("Press anything to roll");
@@ -166,8 +169,10 @@ namespace CMP1903_A1_2324
                 Console.WriteLine("You will get to select more dice after if you want");
                 Console.WriteLine("If you have selected all the dice you wish to reroll type 'done'");
                 Console.WriteLine(" ");
+
                 bool ChoiceLoop2 = true;
                 RollingDice.Clear();
+
                 while (ChoiceLoop2 == true)
                 {
 
@@ -190,6 +195,7 @@ namespace CMP1903_A1_2324
                         Console.WriteLine(" ");
                     }
                 }
+
                 if (RollingDice.Contains(1))
                 {
                     diceA = dice1.Roll();
@@ -217,6 +223,7 @@ namespace CMP1903_A1_2324
                 Console.WriteLine("Dice 4: " + diceD);
                 Console.WriteLine("Dice 5: " + diceE);
                 Console.WriteLine(" ");
+
                 DupList.Clear();
                 DupList.Add(diceA);
                 DupList.Add(diceB);
@@ -307,6 +314,7 @@ namespace CMP1903_A1_2324
             List<int> DupList = new List<int>();
             List<int> DupCountList = new List<int>();
             List<int> ComputerChoice = new List<int>();
+            List<int> ComputerChoice2 = new List<int>();
             Console.WriteLine("Game Started");
 
             bool GameLoop = true;
@@ -335,6 +343,7 @@ namespace CMP1903_A1_2324
                 Console.WriteLine(" ");
                 bool ChoiceLoop = true;
                 RollingDice.Clear();
+
                 while (ChoiceLoop == true)
                 {
 
@@ -448,33 +457,172 @@ namespace CMP1903_A1_2324
                 Console.WriteLine(" ");
  
                 ComputerChoice.Clear();
+                ComputerChoice2.Clear();
                 ComputerChoice.Add(diceA);
                 ComputerChoice.Add(diceB);
                 ComputerChoice.Add(diceC);
                 ComputerChoice.Add(diceD);
                 ComputerChoice.Add(diceE);
-                List <int> ComputerChoice2 = ComputerChoice.Distinct().ToList();
+                int DiceNum1 = ComputerChoice.Count(i => i == 1);
+                int DiceNum2 = ComputerChoice.Count(i => i == 2);
+                int DiceNum3 = ComputerChoice.Count(i => i == 3);
+                int DiceNum4 = ComputerChoice.Count(i => i == 4);
+                int DiceNum5 = ComputerChoice.Count(i => i == 5);
+                int DiceNum6 = ComputerChoice.Count(i => i == 6);
+                ComputerChoice2.Add(DiceNum1);
+                ComputerChoice2.Add(DiceNum2);
+                ComputerChoice2.Add(DiceNum3);
+                ComputerChoice2.Add(DiceNum4);
+                ComputerChoice2.Add(DiceNum5);
+                ComputerChoice2.Add(DiceNum6);
+                ComputerChoice2.Remove(ComputerChoice2.Max());
 
-                if (ComputerChoice.Contains(diceA))
+                if (ComputerChoice2.Contains(DiceNum1))
                 {
-                    diceA = dice1.Roll();
+                    if (diceA == 1)
+                    {
+                        diceA = dice1.Roll();
+                    }
+                    if (diceB == 1)
+                    {
+                        diceB = dice2.Roll();
+                    }
+                    if (diceC == 1)
+                    {
+                        diceC = dice3.Roll();
+                    }
+                    if (diceD == 1)
+                    {
+                        diceD = dice4.Roll();
+                    }
+                    if (diceE == 1)
+                    {
+                        diceE = dice5.Roll();
+                    }
                 }
-                if (ComputerChoice.Contains(diceB))
+
+                if (ComputerChoice2.Contains(DiceNum2))
                 {
-                    diceB = dice2.Roll();
+                    if (diceA == 2)
+                    {
+                        diceA = dice1.Roll();
+                    }
+                    if (diceB == 2)
+                    {
+                        diceB = dice2.Roll();
+                    }
+                    if (diceC == 2)
+                    {
+                        diceC = dice3.Roll();
+                    }
+                    if (diceD == 2)
+                    {
+                        diceD = dice4.Roll();
+                    }
+                    if (diceE == 2)
+                    {
+                        diceE = dice5.Roll();
+                    }
                 }
-                if (ComputerChoice.Contains(diceC))
+
+                if (ComputerChoice2.Contains(DiceNum3))
                 {
-                    diceC = dice3.Roll();
+                    if (diceA == 3)
+                    {
+                        diceA = dice1.Roll();
+                    }
+                    if (diceB == 3)
+                    {
+                        diceB = dice2.Roll();
+                    }
+                    if (diceC == 3)
+                    {
+                        diceC = dice3.Roll();
+                    }
+                    if (diceD == 3)
+                    {
+                        diceD = dice4.Roll();
+                    }
+                    if (diceE == 3)
+                    {
+                        diceE = dice5.Roll();
+                    }
                 }
-                if (ComputerChoice.Contains(diceD))
+
+                if (ComputerChoice2.Contains(DiceNum4))
                 {
-                    diceD = dice4.Roll();
+                    if (diceA == 4)
+                    {
+                        diceA = dice1.Roll();
+                    }
+                    if (diceB == 4)
+                    {
+                        diceB = dice2.Roll();
+                    }
+                    if (diceC == 4)
+                    {
+                        diceC = dice3.Roll();
+                    }
+                    if (diceD == 4)
+                    {
+                        diceD = dice4.Roll();
+                    }
+                    if (diceE == 4)
+                    {
+                        diceE = dice5.Roll();
+                    }
                 }
-                if (ComputerChoice.Contains(diceE))
+
+                if (ComputerChoice2.Contains(DiceNum5))
                 {
-                    diceE = dice5.Roll();
+                    if (diceA == 5)
+                    {
+                        diceA = dice1.Roll();
+                    }
+                    if (diceB == 5)
+                    {
+                        diceB = dice2.Roll();
+                    }
+                    if (diceC == 5)
+                    {
+                        diceC = dice3.Roll();
+                    }
+                    if (diceD == 5)
+                    {
+                        diceD = dice4.Roll();
+                    }
+                    if (diceE == 5)
+                    {
+                        diceE = dice5.Roll();
+                    }
                 }
+
+                if (ComputerChoice2.Contains(DiceNum6))
+                {
+                    if (diceA == 6)
+                    {
+                        diceA = dice1.Roll();
+                    }
+                    if (diceB == 6)
+                    {
+                        diceB = dice2.Roll();
+                    }
+                    if (diceC == 6)
+                    {
+                        diceC = dice3.Roll();
+                    }
+                    if (diceD == 6)
+                    {
+                        diceD = dice4.Roll();
+                    }
+                    if (diceE == 6)
+                    {
+                        diceE = dice5.Roll();
+                    }
+                }
+
+
+
 
                 Console.WriteLine("Dice 1: " + diceA);
                 Console.WriteLine("Dice 2: " + diceB);
@@ -541,7 +689,7 @@ namespace CMP1903_A1_2324
                     else if (Player1Score < Player2Score)
                     {
                         Console.WriteLine("Game Over");
-                        Console.WriteLine("Player 2 Wins!!!");
+                        Console.WriteLine("Computer Wins!!!");
                         Console.WriteLine("Press anything to close game");
                         Console.ReadKey();
                         GameLoop = false;
