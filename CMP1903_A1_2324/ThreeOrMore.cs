@@ -14,7 +14,7 @@ namespace CMP1903_A1_2324
         private Die dice3 = new Die();
         private Die dice4 = new Die();
         private Die dice5 = new Die();
-        private Statistics Score = new Statistics();
+        private PlayerScores Score = new PlayerScores();
         
         int P1Score = 0;
         int P2Score = 0;

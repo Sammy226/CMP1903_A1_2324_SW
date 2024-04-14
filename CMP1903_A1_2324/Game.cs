@@ -12,6 +12,7 @@ namespace CMP1903_A1_2324
     {
         SevensOut Sevens = new SevensOut();
         Testing ThreeTest = new Testing();
+        Statistics Players = new Statistics();
         public void SelectGame()
         {
             Console.WriteLine("Which game would you like to play");
@@ -41,11 +42,17 @@ namespace CMP1903_A1_2324
                             if (VSchoice == "1")
                             {
                                 VSoptions = false;
+                                Players.PlayerCount(2);
+                                Console.WriteLine("Players: " + Players.PlayerCount(0));
+                                Console.WriteLine(" ");
                                 ThreeTest.TestThreeOrMore();
                             }
                             else if (VSchoice == "2")
                             {
                                 VSoptions = false;
+                                Players.PlayerCount(1);
+                                Console.WriteLine("Players: " + Players.PlayerCount(0));
+                                Console.WriteLine(" ");
                                 ThreeTest.TestThreeOrMorePVC();
                             }
                             else

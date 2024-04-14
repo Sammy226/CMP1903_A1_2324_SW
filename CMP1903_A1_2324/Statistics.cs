@@ -9,6 +9,16 @@ namespace CMP1903_A1_2324
 {
     internal class Statistics
     {
+        int Players = 0;
+        public int PlayerCount(int i)
+        {
+            Players = Players + i;
+            return Players;
+        }
+    }
+
+    internal class PlayerScores : Statistics
+    {
         int SPlayer1 = 0;
         int SPlayer2 = 0;
         int TPlayer1 = 0;

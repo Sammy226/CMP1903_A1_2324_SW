@@ -16,7 +16,7 @@ namespace CMP1903_A1_2324
             Die dice1 = new Die();
             Die dice2 = new Die();
             Testing TestS = new Testing();
-            Statistics Score = new Statistics();
+            PlayerScores Score = new PlayerScores();
             bool SevensLoop1 = true;
             while (SevensLoop1 == true)
             {
