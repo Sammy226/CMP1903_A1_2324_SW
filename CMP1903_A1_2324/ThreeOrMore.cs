@@ -9,16 +9,17 @@ namespace CMP1903_A1_2324
 {
     internal class ThreeOrMore
     {
-        public Die dice1 = new Die();
-        public Die dice2 = new Die();
-        public Die dice3 = new Die();
-        public Die dice4 = new Die();
-        public Die dice5 = new Die();
+        private Die dice1 = new Die();
+        private Die dice2 = new Die();
+        private Die dice3 = new Die();
+        private Die dice4 = new Die();
+        private Die dice5 = new Die();
+        private Statistics Score = new Statistics();
+        
+        int P1Score = 0;
+        int P2Score = 0;
 
-        int Player1Score = 0;
-        int Player2Score = 0;
-
-        public void PlayThreeOrMore()
+        public int PlayThreeOrMore()
         {
             List<int> RollingDice = new List<int>();
             List<int> DupList = new List<int>();
@@ -47,7 +48,7 @@ namespace CMP1903_A1_2324
                 Console.WriteLine("Please select the dice you wish to re-roll.");
                 Console.WriteLine("Example: '1'");
                 Console.WriteLine("You will get to select more dice after if you want");
-                Console.WriteLine("If you have selected all the dice you wish to reroll type 'done'");
+                Console.WriteLine("If you have selected all the dice you wish to reroll type 'd'");
                 Console.WriteLine(" ");
 
                 bool ChoiceLoop = true;
@@ -57,7 +58,7 @@ namespace CMP1903_A1_2324
                 {
 
                     string DiceChoice = Console.ReadLine();
-                    if (DiceChoice == "done")
+                    if (DiceChoice == "d")
                     {
                         ChoiceLoop = false;
                         Console.WriteLine(" ");
@@ -126,17 +127,17 @@ namespace CMP1903_A1_2324
 
                 if (DupCount == 3)
                 {
-                    Player1Score = Player1Score + 3;
+                    Score.ThreeOrMoreScore1(3);
                     Console.WriteLine("Player 1 scored 3 points this turn");
                 }
                 else if (DupCount == 4)
                 {
-                    Player1Score = Player1Score + 6;
+                    Score.ThreeOrMoreScore1(6);
                     Console.WriteLine("Player 1 scored 6 points this turn");
                 }
                 else if (DupCount == 5)
                 {
-                    Player1Score = Player1Score + 12;
+                    Score.ThreeOrMoreScore1(12);
                     Console.WriteLine("Player 1 scored 12 points this turn");
                 }
                 else
@@ -167,7 +168,7 @@ namespace CMP1903_A1_2324
                 Console.WriteLine("Please select the dice you wish to re-roll.");
                 Console.WriteLine("Example: '1'");
                 Console.WriteLine("You will get to select more dice after if you want");
-                Console.WriteLine("If you have selected all the dice you wish to reroll type 'done'");
+                Console.WriteLine("If you have selected all the dice you wish to reroll type 'd'");
                 Console.WriteLine(" ");
 
                 bool ChoiceLoop2 = true;
@@ -177,7 +178,7 @@ namespace CMP1903_A1_2324
                 {
 
                     string DiceChoice = Console.ReadLine();
-                    if (DiceChoice == "done")
+                    if (DiceChoice == "d")
                     {
                         ChoiceLoop2 = false;
                         Console.WriteLine(" ");
@@ -247,68 +248,67 @@ namespace CMP1903_A1_2324
 
                 if (DupCount == 3)
                 {
-                    Player2Score = Player2Score + 3;
+                    Score.ThreeOrMoreScore2(3);
                     Console.WriteLine("Player 2 scored 3 points this turn");
                 }
                 else if (DupCount == 4)
                 {
-                    Player2Score = Player2Score + 6;
+                    Score.ThreeOrMoreScore2(6);
                     Console.WriteLine("Player 2 scored 6 points this turn");
                 }
                 else if (DupCount == 5)
                 {
-                    Player2Score = Player2Score + 12;
+                    Score.ThreeOrMoreScore2(12);
                     Console.WriteLine("Player 2 scored 12 points this turn");
                 }
                 else
                 {
                     Console.WriteLine("Player 2 scored 0 points this turn");
                 }
-
+                P1Score = Score.ThreeOrMoreScore1(0);
+                P2Score = Score.ThreeOrMoreScore2(0);
                 Console.WriteLine(" ");
-                Console.WriteLine("Player 1s score: " + Player1Score);
-                Console.WriteLine("Player 2s Score: " + Player2Score);
+                Console.WriteLine("Player 1s score: " + P1Score);
+                Console.WriteLine("Player 2s Score: " + P2Score);
                 Console.WriteLine(" ");
 
-                if (Player1Score >= 20 | Player2Score >= 20)
+                if (P1Score >= 20 | P2Score >= 20)
                 {
-                    if (Player1Score > Player2Score)
+
+                    if (P1Score > P2Score)
                     {
-                        Console.WriteLine("Game Over");
                         Console.WriteLine("Player 1 Wins!!!");
-                        Console.WriteLine("Press anything to close game");
-                        Console.ReadKey();
                         GameLoop = false;
                     }
-                    else if (Player1Score < Player2Score)
+                    else if (P1Score < P2Score)
                     {
-                        Console.WriteLine("Game Over");
                         Console.WriteLine("Player 2 Wins!!!");
-                        Console.WriteLine("Press anything to close game");
-                        Console.ReadKey();
                         GameLoop = false;
                     }
-                    else if (Player1Score == Player2Score)
+                    else if (P1Score == P2Score)
                     {
-                        Console.WriteLine("Game Over");
                         Console.WriteLine("Draw!!!");
-                        Console.WriteLine("Press anything to close game");
-                        Console.ReadKey();
                         GameLoop = false;
                     }
                     else
                     {
                         Console.WriteLine("Error!");
                     }
+
                 }
             }
+        List<int> WinnerList = new List<int>();
+        WinnerList.Add(P1Score);
+        WinnerList.Add(P2Score);
+        int Winner = WinnerList.Max();
+        return Winner;
         }
 
 
 
 
 
-        public void PlayThreeOrMorePVC()
+        public int PlayThreeOrMorePVC()
         {
             List<int> RollingDice = new List<int>();
             List<int> DupList = new List<int>();
@@ -339,7 +339,7 @@ namespace CMP1903_A1_2324
                 Console.WriteLine("Please select the dice you wish to re-roll.");
                 Console.WriteLine("Example: '1'");
                 Console.WriteLine("You will get to select more dice after if you want");
-                Console.WriteLine("If you have selected all the dice you wish to reroll type 'done'");
+                Console.WriteLine("If you have selected all the dice you wish to reroll type 'd'");
                 Console.WriteLine(" ");
                 bool ChoiceLoop = true;
                 RollingDice.Clear();
@@ -348,7 +348,7 @@ namespace CMP1903_A1_2324
                 {
 
                     string DiceChoice = Console.ReadLine();
-                    if (DiceChoice == "done")
+                    if (DiceChoice == "d")
                     {
                         ChoiceLoop = false;
                         Console.WriteLine(" ");
@@ -417,17 +417,17 @@ namespace CMP1903_A1_2324
 
                 if (DupCount == 3)
                 {
-                    Player1Score = Player1Score + 3;
+                    Score.ThreeOrMoreScore1(3);
                     Console.WriteLine("Player 1 scored 3 points this turn");
                 }
                 else if (DupCount == 4)
                 {
-                    Player1Score = Player1Score + 6;
+                    Score.ThreeOrMoreScore1(6);
                     Console.WriteLine("Player 1 scored 6 points this turn");
                 }
                 else if (DupCount == 5)
                 {
-                    Player1Score = Player1Score + 12;
+                    Score.ThreeOrMoreScore1(12);
                     Console.WriteLine("Player 1 scored 12 points this turn");
                 }
                 else
@@ -435,7 +435,9 @@ namespace CMP1903_A1_2324
                     Console.WriteLine("Player 1 scored 0 points this turn");
                 }
 
+
                 //Computers turn
+
 
                 Console.WriteLine("");
                 Console.WriteLine("Computers turn");
@@ -653,53 +655,45 @@ namespace CMP1903_A1_2324
 
                 if (DupCount == 3)
                 {
-                    Player2Score = Player2Score + 3;
+                    Score.ThreeOrMoreScore2(3);
                     Console.WriteLine("Computer scored 3 points this turn");
                 }
                 else if (DupCount == 4)
                 {
-                    Player2Score = Player2Score + 6;
+                    Score.ThreeOrMoreScore2(6);
                     Console.WriteLine("Computer scored 6 points this turn");
                 }
                 else if (DupCount == 5)
                 {
-                    Player2Score = Player2Score + 12;
+                    Score.ThreeOrMoreScore2(6);
                     Console.WriteLine("Computer scored 12 points this turn");
                 }
                 else
                 {
                     Console.WriteLine("Computer scored 0 points this turn");
                 }
-
+                P1Score = Score.ThreeOrMoreScore1(0);
+                P2Score = Score.ThreeOrMoreScore2(0);
                 Console.WriteLine(" ");
-                Console.WriteLine("Player 1s score: " + Player1Score);
-                Console.WriteLine("Player 2s Score: " + Player2Score);
+                Console.WriteLine("Player 1s score: " + P1Score);
+                Console.WriteLine("Computers Score: " + P2Score);
                 Console.WriteLine(" ");
 
-                if (Player1Score >= 20 | Player2Score >= 20)
+                if (P1Score >= 20 | P2Score >= 20)
                 {
-                    if (Player1Score > Player2Score)
+                    if (P1Score > P2Score)
                     {
-                        Console.WriteLine("Game Over");
                         Console.WriteLine("Player 1 Wins!!!");
-                        Console.WriteLine("Press anything to close game");
-                        Console.ReadKey();
                         GameLoop = false;
                     }
-                    else if (Player1Score < Player2Score)
+                    else if (P1Score < P2Score)
                     {
-                        Console.WriteLine("Game Over");
                         Console.WriteLine("Computer Wins!!!");
-                        Console.WriteLine("Press anything to close game");
-                        Console.ReadKey();
                         GameLoop = false;
                     }
-                    else if (Player1Score == Player2Score)
+                    else if (P1Score == P2Score)
                     {
-                        Console.WriteLine("Game Over");
                         Console.WriteLine("Draw!!!");
-                        Console.WriteLine("Press anything to close game");
-                        Console.ReadKey();
                         GameLoop = false;
                     }
                     else
@@ -708,6 +702,23 @@ namespace CMP1903_A1_2324
                     }
                 }
             }
+        List<int> WinnerList = new List<int>();
+        WinnerList.Add(P1Score);
+        WinnerList.Add(P2Score);
+        int Winner = WinnerList.Max();
+        return Winner;
+        }
+        public void ThreeOrMoreRules()
+        {
+            Console.WriteLine(" ");
+            Console.WriteLine("In Three Or More you and another player or computer will take turns rolling 5 dice");
+            Console.WriteLine("you score points when mulitiple dice roll the same number");
+            Console.WriteLine("3 of a kind = 3 points, 4 of a kind = 6 points, 5 of a kind = 12 points");
+            Console.WriteLine("After your initial roll you can choose dice you with to roll again, you can only do this once per turn");
+            Console.WriteLine("The game ends when a player reaches 20 points");
+            Console.WriteLine("If both players reach 20 points then the player with the most points wins");
+            Console.WriteLine(" ");
+            Console.WriteLine(" ");
         }
     }
 }
