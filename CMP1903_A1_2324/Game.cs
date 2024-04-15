@@ -22,15 +22,15 @@ namespace CMP1903_A1_2324
             bool GameLoop = true;
             while (GameLoop == true)
             {
-                try
+                try // will check the code inside for exceptions thrown
                 {
-                    int GameChoice = Convert.ToInt32(Console.ReadLine());
-                    if (GameChoice == 1)
+                    int GameChoice = Convert.ToInt32(Console.ReadLine()); // takes an input from user and converts it to an int
+                    if (GameChoice == 1) // if the user enters a 1 the program starts Sevens Out
                     {
                         Sevens.PlaySevens();
                         GameLoop = false;
                     }
-                    else if (GameChoice == 2)
+                    else if (GameChoice == 2) // if the user enters a 2 the program asks them to choose between playing against another player or a computer
                     {
                         GameLoop = false;
                         Console.WriteLine("Do you want to play Three Or More against another player or a computer");
@@ -68,7 +68,7 @@ namespace CMP1903_A1_2324
                         Console.WriteLine("Only '1' and '2' are accepted inputs");
                     }
                 }
-                catch (FormatException)
+                catch (FormatException) // catches an exception if the user inputs anything other then an int
                 {
                     Console.WriteLine("Please enter either '1' or '2'");
                 }

@@ -14,7 +14,7 @@ namespace CMP1903_A1_2324
         SevensOut SevensT = new SevensOut();
 
 
-        public void TestThreeOrMore()
+        public void TestThreeOrMore() // checks to see if the players score is over 20
         {
             int ThreeTest = ThreeT.PlayThreeOrMore();
             Debug.Assert(ThreeTest == 20 | ThreeTest > 20);
@@ -26,7 +26,7 @@ namespace CMP1903_A1_2324
             }
         }
 
-        public void TestThreeOrMorePVC()
+        public void TestThreeOrMorePVC() // checks to see if the players score / computers score is over 20
         {
             int ThreeTest = ThreeT.PlayThreeOrMorePVC();
             Debug.Assert(ThreeTest == 20 | ThreeTest > 20);
@@ -38,7 +38,7 @@ namespace CMP1903_A1_2324
             }
         }
 
-        public bool TestSevensOut(int i, int j)
+        public bool TestSevensOut(int i, int j) // checks to see if the dice total is over 7
         {
             if (i + j == 7)
             { 

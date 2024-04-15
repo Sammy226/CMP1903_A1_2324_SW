@@ -11,7 +11,7 @@ namespace CMP1903_A1_2324
         int diceA = 0;
         int diceB = 0;
 
-        public void PlaySevens()
+        public void PlaySevens() // starts the sevens out game
         {
             Die dice1 = new Die();
             Die dice2 = new Die();
@@ -24,26 +24,26 @@ namespace CMP1903_A1_2324
                 int DiceScore = 0;
                 Console.WriteLine("Press anything to roll the dice");
                 Console.ReadKey();
-                diceA = dice1.Roll();
+                diceA = dice1.Roll(); // rolls both dice
                 diceB = dice2.Roll();
-                if (diceA == diceB)
+                if (diceA == diceB) // checks for double and doubles score if so
                 {
                     DiceTotal = diceA + diceB;
                     DiceScore = DiceTotal * 2;
                     Score.SevensOutScore1(DiceScore);
                     
                 }
-                else if (TestS.TestSevensOut(diceA, diceB) == true)
+                else if (TestS.TestSevensOut(diceA, diceB) == true) // checks to see if dice total is 7
                 {
                     DiceTotal = diceA + diceB;
-                    SevensLoop1 = false;
+                    SevensLoop1 = false; // ends player 1s turn
                 }
-                else
+                else // adds dice total to player score
                 {
                     DiceTotal = diceA + diceB;
                     Score.SevensOutScore1(DiceTotal);
                 }
-                Console.WriteLine(" ");
+                Console.WriteLine(" "); // displays dice numbers, dice total and player score
                 Console.WriteLine("Dice 1 rolled: " + diceA);
                 Console.WriteLine("Dice 2 rolled: " + diceB);
                 Console.WriteLine("The Dice Total is: " + DiceTotal);
@@ -70,7 +70,7 @@ namespace CMP1903_A1_2324
                     DiceTotal = diceA + diceB;
                     Score.SevenOutScore2(DiceScore);
                 }
-                else if (diceA + diceB == 7)
+                else if (TestS.TestSevensOut(diceA, diceB) == true)
                 {
                     DiceTotal = diceA + diceB;
                     SevensLoop2 = false;
@@ -92,7 +92,7 @@ namespace CMP1903_A1_2324
 
             int P1 = Score.SevensOutScore1(0);
             int P2 = Score.SevenOutScore2(0);
-            if (P1 > P2)
+            if (P1 > P2) // check who has the biggest score and announces the winner
             {
                 Console.WriteLine("GAME OVER");
                 Console.WriteLine("Player 1 Wins!!!");
@@ -115,7 +115,7 @@ namespace CMP1903_A1_2324
             }
         }
 
-        public void SevensOutRules()
+        public void SevensOutRules() // displays the sevens out rules
         {
             Console.WriteLine(" ");
             Console.WriteLine("In Sevens Out you will take turns rolling two dice");

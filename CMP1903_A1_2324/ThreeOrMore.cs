@@ -19,7 +19,7 @@ namespace CMP1903_A1_2324
         int P1Score = 0;
         int P2Score = 0;
 
-        public int PlayThreeOrMore()
+        public int PlayThreeOrMore() // starts the three or more game
         {
             List<int> RollingDice = new List<int>();
             List<int> DupList = new List<int>();
@@ -34,7 +34,7 @@ namespace CMP1903_A1_2324
                 Console.WriteLine("Press anything to roll");
                 Console.WriteLine(" ");
                 Console.ReadKey();
-                int diceA = dice1.Roll();
+                int diceA = dice1.Roll(); // rolls 5 dice
                 int diceB = dice2.Roll();
                 int diceC = dice3.Roll();
                 int diceD = dice4.Roll();
@@ -56,13 +56,13 @@ namespace CMP1903_A1_2324
                 while (ChoiceLoop == true)
                 {
 
-                    string DiceChoice = Console.ReadLine();
+                    string DiceChoice = Console.ReadLine(); // ends the loop when the user types 'd'
                     if (DiceChoice == "d")
                     {
                         ChoiceLoop = false;
                         Console.WriteLine(" ");
                     }
-                    else if (DiceChoice == "1" | DiceChoice == "2" | DiceChoice == "3" | DiceChoice == "4" | DiceChoice == "5")
+                    else if (DiceChoice == "1" | DiceChoice == "2" | DiceChoice == "3" | DiceChoice == "4" | DiceChoice == "5") // adds dice picked by the user to a list to be re-rolled
                     {
                         int NewDiceChoice = int.Parse(DiceChoice);
                         RollingDice.Add(NewDiceChoice);
@@ -70,13 +70,13 @@ namespace CMP1903_A1_2324
                     }
                     else
                     {
-                        Console.WriteLine("Valid inputs include: '1', '2', '3', '4', '5', 'done'");
+                        Console.WriteLine("Valid inputs include: '1', '2', '3', '4', '5', 'done'"); // incase the users input is invalid it will ask them to try again
                         Console.WriteLine("Please try again");
                         Console.WriteLine(" ");
                     }
                 }
 
-                if (RollingDice.Contains(1))
+                if (RollingDice.Contains(1)) // re-rolls the dice the user picked
                 {
                     diceA = dice1.Roll();
                 }
@@ -104,12 +104,12 @@ namespace CMP1903_A1_2324
                 Console.WriteLine("Dice 5: " + diceE);
                 Console.WriteLine(" ");
                 DupList.Clear();
-                DupList.Add(diceA);
+                DupList.Add(diceA); // adds each number rolled to a list
                 DupList.Add(diceB);
                 DupList.Add(diceC);
                 DupList.Add(diceD);
                 DupList.Add(diceE);
-                int DupCount1 = DupList.Count(x => x == 1);
+                int DupCount1 = DupList.Count(x => x == 1); // counts how many times the numbers 1 - 6 showed up in the list
                 int DupCount2 = DupList.Count(x => x == 2);
                 int DupCount3 = DupList.Count(x => x == 3);
                 int DupCount4 = DupList.Count(x => x == 4);
@@ -122,9 +122,9 @@ namespace CMP1903_A1_2324
                 DupCountList.Add(DupCount4);
                 DupCountList.Add(DupCount5);
                 DupCountList.Add(DupCount6);
-                int DupCount = DupCountList.Max();
+                int DupCount = DupCountList.Max(); // adds each number to a list and takes the biggest (the number that appeared the most among the dice
 
-                if (DupCount == 3)
+                if (DupCount == 3) // checks to see if the user scored, 
                 {
                     Score.ThreeOrMoreScore1(3);
                     Console.WriteLine("Player 1 scored 3 points this turn");
@@ -222,7 +222,6 @@ namespace CMP1903_A1_2324
                 Console.WriteLine("Dice 4: " + diceD);
                 Console.WriteLine("Dice 5: " + diceE);
                 Console.WriteLine(" ");
-
                 DupList.Clear();
                 DupList.Add(diceA);
                 DupList.Add(diceB);
@@ -440,7 +439,7 @@ namespace CMP1903_A1_2324
                 Console.WriteLine("Computers turn");
                 Console.WriteLine("Press anything to see roll");
                 Console.WriteLine(" ");
-                Console.ReadKey();
+                Console.ReadKey(); // waits for user to press a key
                 diceA = dice1.Roll();
                 diceB = dice2.Roll();
                 diceC = dice3.Roll();
@@ -457,26 +456,26 @@ namespace CMP1903_A1_2324
  
                 ComputerChoice.Clear();
                 ComputerChoice2.Clear();
-                ComputerChoice.Add(diceA);
+                ComputerChoice.Add(diceA); // adds the dice numbers to a list
                 ComputerChoice.Add(diceB);
                 ComputerChoice.Add(diceC);
                 ComputerChoice.Add(diceD);
                 ComputerChoice.Add(diceE);
-                int DiceNum1 = ComputerChoice.Count(i => i == 1);
+                int DiceNum1 = ComputerChoice.Count(i => i == 1); // counts how often each number from 1-6 shows up among the dice
                 int DiceNum2 = ComputerChoice.Count(i => i == 2);
                 int DiceNum3 = ComputerChoice.Count(i => i == 3);
                 int DiceNum4 = ComputerChoice.Count(i => i == 4);
                 int DiceNum5 = ComputerChoice.Count(i => i == 5);
                 int DiceNum6 = ComputerChoice.Count(i => i == 6);
-                ComputerChoice2.Add(DiceNum1);
+                ComputerChoice2.Add(DiceNum1); // puts those numbers in a list
                 ComputerChoice2.Add(DiceNum2);
                 ComputerChoice2.Add(DiceNum3);
                 ComputerChoice2.Add(DiceNum4);
                 ComputerChoice2.Add(DiceNum5);
                 ComputerChoice2.Add(DiceNum6);
-                ComputerChoice2.Remove(ComputerChoice2.Max());
+                ComputerChoice2.Remove(ComputerChoice2.Max()); // removes the biggest number (the most duplicates)
 
-                if (ComputerChoice2.Contains(DiceNum1))
+                if (ComputerChoice2.Contains(DiceNum1)) // checks each dice and re-rolls them if they arnt the highest of a kind
                 {
                     if (diceA == 1)
                     {
@@ -662,7 +661,7 @@ namespace CMP1903_A1_2324
                 }
                 else if (DupCount == 5)
                 {
-                    Score.ThreeOrMoreScore2(6);
+                    Score.ThreeOrMoreScore2(12);
                     Console.WriteLine("Computer scored 12 points this turn");
                 }
                 else
