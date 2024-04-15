@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,46 +17,24 @@ namespace CMP1903_A1_2324
         public void TestThreeOrMore()
         {
             int ThreeTest = ThreeT.PlayThreeOrMore();
-            if (ThreeTest == 20)
+            Debug.Assert(ThreeTest == 20 | ThreeTest > 20);
             {
                 Console.WriteLine("Game Over");
                 Console.WriteLine("Press anything to close");
                 Console.WriteLine(" ");
                 Console.ReadKey();
-            }
-            else if (ThreeTest > 20)
-            {
-                Console.WriteLine("Game Over");
-                Console.WriteLine("Press anything to close");
-                Console.WriteLine(" ");
-                Console.ReadKey();
-            }
-            else
-            {
-                Console.WriteLine("Error");
             }
         }
 
         public void TestThreeOrMorePVC()
         {
             int ThreeTest = ThreeT.PlayThreeOrMorePVC();
-            if (ThreeTest == 20)
+            Debug.Assert(ThreeTest == 20 | ThreeTest > 20);
             {
                 Console.WriteLine("Game Over");
                 Console.WriteLine("Press anything to close");
                 Console.WriteLine(" ");
                 Console.ReadKey();
-            }
-            else if (ThreeTest > 20)
-            {
-                Console.WriteLine("Game Over");
-                Console.WriteLine("Press anything to close");
-                Console.WriteLine(" ");
-                Console.ReadKey();
-            }
-            else
-            {
-                Console.WriteLine("Error");
             }
         }
 

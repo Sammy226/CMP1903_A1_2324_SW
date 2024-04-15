@@ -45,8 +45,7 @@ namespace CMP1903_A1_2324
                 Console.WriteLine("Dice 4: " + diceD);
                 Console.WriteLine("Dice 5: " + diceE);
                 Console.WriteLine(" ");
-                Console.WriteLine("Please select the dice you wish to re-roll.");
-                Console.WriteLine("Example: '1'");
+                Console.WriteLine("Please select the dice you wish to re-roll. Example '1'");
                 Console.WriteLine("You will get to select more dice after if you want");
                 Console.WriteLine("If you have selected all the dice you wish to reroll type 'd'");
                 Console.WriteLine(" ");
@@ -165,8 +164,7 @@ namespace CMP1903_A1_2324
                 Console.WriteLine("Dice 4: " + diceD);
                 Console.WriteLine("Dice 5: " + diceE);
                 Console.WriteLine(" ");
-                Console.WriteLine("Please select the dice you wish to re-roll.");
-                Console.WriteLine("Example: '1'");
+                Console.WriteLine("Please select the dice you wish to re-roll. Example '1'");
                 Console.WriteLine("You will get to select more dice after if you want");
                 Console.WriteLine("If you have selected all the dice you wish to reroll type 'd'");
                 Console.WriteLine(" ");
@@ -336,8 +334,7 @@ namespace CMP1903_A1_2324
                 Console.WriteLine("Dice 4: " + diceD);
                 Console.WriteLine("Dice 5: " + diceE);
                 Console.WriteLine(" ");
-                Console.WriteLine("Please select the dice you wish to re-roll.");
-                Console.WriteLine("Example: '1'");
+                Console.WriteLine("Please select the dice you wish to re-roll. Example '1'");
                 Console.WriteLine("You will get to select more dice after if you want");
                 Console.WriteLine("If you have selected all the dice you wish to reroll type 'd'");
                 Console.WriteLine(" ");
@@ -715,6 +712,7 @@ namespace CMP1903_A1_2324
             Console.WriteLine("you score points when mulitiple dice roll the same number");
             Console.WriteLine("3 of a kind = 3 points, 4 of a kind = 6 points, 5 of a kind = 12 points");
             Console.WriteLine("After your initial roll you can choose dice you with to roll again, you can only do this once per turn");
+            Console.WriteLine("When choosing dice to re-roll please enter the dice number not the number it rolled");
             Console.WriteLine("The game ends when a player reaches 20 points");
             Console.WriteLine("If both players reach 20 points then the player with the most points wins");
             Console.WriteLine(" ");

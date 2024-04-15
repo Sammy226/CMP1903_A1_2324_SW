@@ -89,6 +89,7 @@ namespace CMP1903_A1_2324
                 diceA = 0;
                 diceB = 0;
             }
+
             int P1 = Score.SevensOutScore1(0);
             int P2 = Score.SevenOutScore2(0);
             if (P1 > P2)
@@ -119,7 +120,7 @@ namespace CMP1903_A1_2324
             Console.WriteLine(" ");
             Console.WriteLine("In Sevens Out you will take turns rolling two dice");
             Console.WriteLine("The total value of those dice will be added to your scores");
-            Console.WriteLine("If you roll a double, the dice total will be doubled for that turn");
+            Console.WriteLine("If you roll a double, your score will be doubled for that turn");
             Console.WriteLine("If you roll a 7 then your turn ends and its the other players turn to roll the dice");
             Console.WriteLine("Also seven is not added to your score.");
             Console.WriteLine("The game ends when both players have rolled a 7");
